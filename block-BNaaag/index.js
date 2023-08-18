@@ -26,7 +26,8 @@ fs.readFile('./content.md', (err, content) => {
 });
 
 // 2. Run sync code from fs module in the above file(`index.js`).
-fs.readFileSync('./index.js', 'utf-8');
+let syncCode = fs.readFileSync('./content.md', 'utf-8');
+console.log(`This is syncronous code ->  ${syncCode}`);
 
 // 3. Run async code from fs module in same file.
 
