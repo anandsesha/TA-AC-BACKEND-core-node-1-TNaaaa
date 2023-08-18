@@ -1,5 +1,5 @@
 // Q. Write code to run `index.js` with content console.log('Welcome to Nodejs') in node environment ?
-let { readFile, unlink } = require('fs');
+let { readFile, unlink, readFileSync } = require('fs');
 
 readFile('./index.js', (err, content) => {
   console.log(`Welcome to Nodejs`);
@@ -43,3 +43,9 @@ readFile('./index.js', (err, content) => {
   console.log(`Part of Async function`);
 });
 console.log('last');
+
+// OR
+let sync = readFileSync('./app.js');
+let async = readFile('./app.js', (err, content) => {
+  console.log(err, content.toString());
+});
