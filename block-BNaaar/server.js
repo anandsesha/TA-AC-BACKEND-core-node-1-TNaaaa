@@ -8,7 +8,7 @@ function handleRequest(req, res) {
     res.write('<h2>This is all ABOUT Node.js</h2>');
     res.end();
   } else if (req.method === 'POST' && req.url === '/about') {
-    res.setHeader('Content-Type', 'text/json');
+    res.setHeader('Content-Type', 'application/json');
     res.write('{message: this is a post request}');
     res.end();
   } else {
