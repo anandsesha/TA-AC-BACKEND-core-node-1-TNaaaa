@@ -3,8 +3,9 @@ var fs = require('fs');
 
 function handleRequest(req, res) {
   if (req.method === 'GET' && req.url === '/file') {
-    res.setHeader('Content-Type', 'text/html');
     fs.readFile('./node.html', (err, content) => {
+      if (err) console.log(err);
+      res.setHeader('Content-Type', 'text/html');
       console.log(content);
       res.end(content);
     });
